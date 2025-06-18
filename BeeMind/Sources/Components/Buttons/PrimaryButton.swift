@@ -24,7 +24,7 @@ struct PrimaryButton: View {
     let action: () -> Void
     
     /// Optional background color (default: Primary Yellow from Assets).
-    var backgroundColor: Color = Color("PrimaryYellow")
+    var backgroundColor: Color = Color("Primary")
     
     /// Optional text color (default: black).
     var textColor: Color = .black
@@ -41,8 +41,8 @@ struct PrimaryButton: View {
                 .padding(.vertical, 14)
                 .padding(.horizontal, 24)
                 .frame(maxWidth: isFullWidth ? .infinity : nil)
-                .background(backgroundColor)
-                .foregroundColor(textColor)
+                .background(Color("Primary"))
+                .foregroundColor(Color("ButtonPrimaryText"))
                 .cornerRadius(12)
                 .shadow(color: backgroundColor.opacity(0.3), radius: 4, x: 0, y: 2)
         }

@@ -25,7 +25,7 @@ struct SectionCard<Content: View>: View {
             if let title = title {
                 Text(title)
                     .font(.headline)
-                    .foregroundColor(.primary)
+                    .foregroundColor(Color("CardPrimaryText"))
             }
             
             content
@@ -33,7 +33,7 @@ struct SectionCard<Content: View>: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color.white)
+                .fill(Color("CardBackground"))
                 .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
         )
         .padding(.horizontal)
@@ -49,6 +49,8 @@ struct SectionCard_Previews: PreviewProvider {
                     .foregroundColor(.accentColor)
                     .imageScale(.large)
                 Text("Take a moment to breathe.")
+                    .font(.headline)
+                    .foregroundColor(.black)
             }
         }
         .previewLayout(.sizeThatFits)
