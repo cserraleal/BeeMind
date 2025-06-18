@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A4751A9B2E03186E0079A788 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A4751A9A2E0318570079A788 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A445ADA42E0310410063C69A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		A445AD942E03103E0063C69A /* BeeMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A445ADA32E0310410063C69A /* BeeMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A445ADAD2E0310420063C69A /* BeeMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4751A9A2E0318570079A788 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		A445AD8B2E03103E0063C69A = {
 			isa = PBXGroup;
 			children = (
+				A4751A9A2E0318570079A788 /* .gitignore */,
 				A445AD962E03103E0063C69A /* BeeMind */,
 				A445ADA62E0310420063C69A /* BeeMindTests */,
 				A445ADB02E0310420063C69A /* BeeMindUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4751A9B2E03186E0079A788 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
