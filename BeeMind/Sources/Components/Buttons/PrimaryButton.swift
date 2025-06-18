@@ -39,7 +39,7 @@ struct PrimaryButton: View {
             Text(title)
                 .fontWeight(.semibold)
                 .padding(.vertical, 14)
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 20)
                 .frame(maxWidth: isFullWidth ? .infinity : nil)
                 .background(Color("Primary"))
                 .foregroundColor(Color("ButtonPrimaryText"))
