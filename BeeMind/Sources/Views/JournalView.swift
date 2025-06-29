@@ -10,7 +10,7 @@ import SwiftUI
 struct JournalView: View {
     var body: some View {
         ScreenContainer {
-            Text("[VIEW_NAME]")
+            Text("Journal")
                 .font(.largeTitle)
                 .foregroundColor(Color("TextPrimary"))
         }

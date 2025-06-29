@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         ScreenContainer {
-            Text("[VIEW_NAME]")
+            Text("Profile")
                 .font(.largeTitle)
                 .foregroundColor(Color("TextPrimary"))
         }

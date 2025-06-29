@@ -10,7 +10,7 @@ import SwiftUI
 struct HiveView: View {
     var body: some View {
         ScreenContainer {
-            Text("[VIEW_NAME]")
+            Text("Hive")
                 .font(.largeTitle)
                 .foregroundColor(Color("TextPrimary"))
         }

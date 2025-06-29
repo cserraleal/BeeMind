@@ -1,5 +1,5 @@
 //
-//  ProgressView.swift
+//  SessionView.swift
 //  BeeMind
 //
 //  Created by Cristobal Serra on 29/06/25.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ProgressView: View {
+struct SessionView: View {
     var body: some View {
         ScreenContainer {
-            Text("Progress")
+            Text("Session View")
                 .font(.largeTitle)
                 .foregroundColor(Color("TextPrimary"))
         }
@@ -18,6 +18,6 @@ struct ProgressView: View {
 }
 
 #Preview {
-    ProgressView()
+    SessionView()
 }
 

@@ -40,9 +40,9 @@ enum TabRoute: CaseIterable, Hashable {
             )
         case .profile:
             return TabItem(
-                title: "Profile",
-                icon: "person.crop.circle",
-                view: AnyView(ProfileView())
+                title: "Session",
+                icon: "calendar",
+                view: AnyView(SessionView())
             )
         }
     }
