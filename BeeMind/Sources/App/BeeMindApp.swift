@@ -25,7 +25,7 @@ struct BeeMindApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            CustomTabBarView()
         }
         .modelContainer(sharedModelContainer)
     }
