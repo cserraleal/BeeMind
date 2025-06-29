@@ -54,7 +54,7 @@ struct StatCard: View {
         .background(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .fill(backgroundColor)
-                .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
+                .shadow(color: Color("CardBackground"), radius: 4, x: 0, y: 1)
         )
     }
 }
@@ -75,6 +75,7 @@ struct StatCard_Previews: PreviewProvider {
                 StatCard(iconName: "book.closed", title: "Journal", value: "7")
                     .frame(maxWidth: .infinity)
                 StatCard(iconName: "heart.fill", title: "Sessions", value: "7")
+                    .frame(maxWidth: .infinity)
             }
             .padding(.top, 8)
             

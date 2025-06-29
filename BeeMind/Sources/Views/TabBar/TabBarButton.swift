@@ -24,6 +24,7 @@ struct TabBarButton: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: size, height: size)
                 .foregroundColor(isSelected ? Color("TabBarSelected") : Color("TabBarUnselected"))
+                .shadow(color: Color("Background"), radius: 4, x: 0, y: 2)
         }
     }
 }

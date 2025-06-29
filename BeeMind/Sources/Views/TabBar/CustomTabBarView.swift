@@ -12,6 +12,7 @@ struct CustomTabBarView: View {
     
     // MARK: - State
     @State private var selectedTab: TabRoute = .home
+    @State private var showProfile = false
     
     // MARK: - Body
     var body: some View {
@@ -20,34 +21,55 @@ struct CustomTabBarView: View {
             // Main screen content
             selectedTab.item.view
                 .padding(.bottom, 60)
-                 // Allow content to flow to top under notch if needed
             
-            // Custom Tab Bar
+            // ✅ Insert this block right HERE
+            VStack {
+                HStack {
+                    Spacer()
+                    ProfileIconButton(action: {
+                        showProfile = true
+                    })
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 20)
+                
+                Spacer()
+            }
+            
+            // Bottom custom tab bar
             HStack {
                 ForEach(TabRoute.allCases, id: \.self) { route in
-                        Spacer()
-                        TabBarButton(
-                            icon: route.item.icon,
-                            isSelected: selectedTab == route,
-                            action: {
-                                selectedTab = route
-                            }
-                        )
-                        Spacer()
-                    }
+                    Spacer()
+                    TabBarButton(
+                        icon: route.item.icon,
+                        isSelected: selectedTab == route,
+                        action: {
+                            selectedTab = route
+                        }
+                    )
+                    Spacer()
+                }
             }
             .frame(height: 60)
-            //.padding(.bottom, 5) // Optional: buffer from gesture bar
             .background(Color("Background"))
             .ignoresSafeArea(edges: .bottom)
             .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: -2)
         }
+        .sheet(isPresented: $showProfile) {
+            ProfileView()
+        }
+
     }
 }
 
 // MARK: - Preview
-#Preview {
-    CustomTabBarView()
-        .preferredColorScheme(.light)
+struct CustomTabBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CustomTabBarView()
+                .preferredColorScheme(.light)
+            CustomTabBarView()
+                .preferredColorScheme(.dark)
+        }
+    }
 }
-
