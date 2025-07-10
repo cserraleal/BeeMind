@@ -10,28 +10,33 @@ import SwiftUI
 /// HiveView shows interactive mental wellness exercises and games.
 struct HiveView: View {
     
+    // MARK: - State
+    @State private var showBreathingMenu = false
+
     // MARK: - Exercise Models
-    private var exerciseButtons: [ExerciseCardModel] = [
-        ExerciseCardModel(
-            title: "Start Breathing",
-            iconName: "wind",
-            backgroundColor: Color.blue,
-            action: { print("Start Breathing tapped") }
-        ),
-        ExerciseCardModel(
-            title: "Guided Meditation",
-            iconName: "brain.head.profile",
-            backgroundColor: Color.green,
-            action: { print("Guided Meditation tapped") }
-        ),
-        ExerciseCardModel(
-            title: "Stretching",
-            iconName: "figure.walk",
-            backgroundColor: Color.purple,
-            action: { print("Stretching tapped") }
-        )
-    ]
-    
+    private var exerciseButtons: [ExerciseCardModel] {
+        [
+            ExerciseCardModel(
+                title: "Start Breathing",
+                iconName: "wind",
+                backgroundColor: Color.blue,
+                action: { showBreathingMenu = true } // ✅ Updated
+            ),
+            ExerciseCardModel(
+                title: "Guided Meditation",
+                iconName: "brain.head.profile",
+                backgroundColor: Color.green,
+                action: { print("Guided Meditation tapped") }
+            ),
+            ExerciseCardModel(
+                title: "Stretching",
+                iconName: "figure.walk",
+                backgroundColor: Color.purple,
+                action: { print("Stretching tapped") }
+            )
+        ]
+    }
+
     // MARK: - MiniGame Models
     private var miniGames: [MiniGameCardModel] = [
         MiniGameCardModel(
@@ -80,14 +85,14 @@ struct HiveView: View {
                     title: "Exercises",
                     subtitle: nil
                 )
-                .padding(.top, 25)
+                .padding(.top, 20)
                 
                 VStack(spacing: 12) {
                     ForEach(Array(exerciseButtons.enumerated()), id: \.1.id) { index, model in
-                            ExerciseCardButton(
-                                model: model,
-                                animationDelay: Double(index) * 0.3 // Flip-in staggered
-                            )
+                        ExerciseCardButton(
+                            model: model,
+                            animationDelay: Double(index) * 0.3
+                        )
                     }
                 }
                 
@@ -102,11 +107,14 @@ struct HiveView: View {
                     ForEach(Array(miniGames.enumerated()), id: \.1.id) { index, model in
                         MiniGameCardButton(
                             model: model,
-                            animationDelay: Double(index) * 0.4 // ✅ stagger by 0.3s per card
+                            animationDelay: Double(index) * 0.3
                         )
                     }
                 }
             }
+        }
+        .sheet(isPresented: $showBreathingMenu) {
+            BreathingMenuView() // ✅ Slide-up breathing menu
         }
     }
 }
