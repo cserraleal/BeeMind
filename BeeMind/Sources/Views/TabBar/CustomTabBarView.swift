@@ -58,7 +58,6 @@ struct CustomTabBarView: View {
         .sheet(isPresented: $showProfile) {
             ProfileView()
         }
-
     }
 }
 
